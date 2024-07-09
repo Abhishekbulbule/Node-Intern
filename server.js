@@ -24,9 +24,8 @@ app.get('/api/getVendorUsers',argCheck, (req, res)=>{
     const query = 'select * from PrLineItems'; 
     connection.query(query, (err, results) => {
         if (err) {
-            return res.json({
-                status:404,
-                message : err
+            return res.status(404).json({
+                message : "Some error Occured!!"
             })
         }
         console.log('User data:', results);
